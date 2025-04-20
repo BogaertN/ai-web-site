@@ -48,6 +48,10 @@ h2 {
   margin-bottom: 0.75rem;
   text-shadow: 0 0 10px #99eaffaa;
 }
+<section style="text-align: center; margin-top: 4rem;">
+  <p style="color: #7fffd4; font-size: 1.1rem;">🛠️ Now Building: <strong>Drift Journal Alpha</strong></p>
+  <p style="color: #aaa;">ETA: Public Release Q2 2025</p>
+</section>
 
 footer {
   text-align: center;
