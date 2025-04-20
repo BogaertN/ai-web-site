@@ -49,3 +49,20 @@ footer {
   font-size: 0.9rem;
   color: #88b3d5;
 }
+.feature-card {
+  background: rgba(0,255,255,0.05);
+  border: 1px solid rgba(0,255,255,0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  flex: 1 1 250px;
+  box-shadow: 0 0 10px #00ffff22;
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  background: rgba(0,255,255,0.12);
+  box-shadow: 0 0 15px #00ffff55;
+}
+@keyframes pulse {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
