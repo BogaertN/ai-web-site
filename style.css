@@ -77,3 +77,15 @@ footer {
   0% { opacity: 0.2; }
   100% { opacity: 0.6; }
 }
+@media screen and (max-width: 768px) {
+  .feature-card {
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+  }
+  section {
+    padding: 1rem;
+  }
+  header img {
+    max-width: 120px;
+  }
+}
