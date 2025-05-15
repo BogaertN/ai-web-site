@@ -1,14 +1,20 @@
-/* style.css - NeoFlux Starter Theme */
+/* NeoFlux Matched Theme for AI.Web Landing Page */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #101320, #202636);
   color: #e0f7ff;
 }
-<div style="position: fixed; inset: 0; background: radial-gradient(circle, rgba(0,255,255,0.03), transparent 70%); pointer-events: none; z-index: 0; animation: pulse 6s infinite alternate;"></div>
+
+.logo {
+  max-width: 180px;
+  margin-top: 2rem;
+}
+
 header {
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   background: radial-gradient(circle, #00ffff20 0%, transparent 80%);
 }
 
@@ -18,23 +24,34 @@ h1 {
   text-shadow: 0 0 15px #00ffff;
 }
 
+h2 {
+  color: #99eaff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 10px #99eaffaa;
+}
+
+p {
+  line-height: 1.6;
+  color: #c4f6ff;
+}
+
 .hero-button {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.7rem 1.5rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
   background: linear-gradient(90deg, #00ffff, #a1c4fd);
   color: #000;
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 0 20px #00ffff88;
+  transition: all 0.3s ease;
 }
 
 .hero-button:hover {
   background: #00ffff;
   color: #001;
   box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff88;
-  transition: all 0.3s ease;
 }
 
 section {
@@ -43,15 +60,27 @@ section {
   padding: 0 2rem;
 }
 
-h2 {
-  color: #99eaff;
-  margin-bottom: 0.75rem;
-  text-shadow: 0 0 10px #99eaffaa;
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
-<section style="text-align: center; margin-top: 4rem;">
-  <p style="color: #7fffd4; font-size: 1.1rem;">🛠️ Now Building: <strong>Drift Journal Alpha</strong></p>
-  <p style="color: #aaa;">ETA: Public Release Q2 2025</p>
-</section>
+
+.feature-card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  flex: 1 1 250px;
+  box-shadow: 0 0 10px #00ffff22;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(0, 255, 255, 0.12);
+  box-shadow: 0 0 15px #00ffff55;
+}
 
 footer {
   text-align: center;
@@ -60,27 +89,7 @@ footer {
   font-size: 0.9rem;
   color: #88b3d5;
 }
-.feature-card {
-  background: rgba(0,255,255,0.05);
-  border: 1px solid rgba(0,255,255,0.15);
-  border-radius: 12px;
-  padding: 1rem;
-  flex: 1 1 250px;
-  box-shadow: 0 0 10px #00ffff22;
-  transition: all 0.3s ease;
-}
-.feature-card:hover {
-  background: rgba(0,255,255,0.12);
-  box-shadow: 0 0 15px #00ffff55;
-}
-@keyframes pulse {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
-@keyframes pulse {
-  0% { opacity: 0.2; }
-  100% { opacity: 0.6; }
-}
+
 @media screen and (max-width: 768px) {
   .feature-card {
     flex: 1 1 100%;
