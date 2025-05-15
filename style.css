@@ -1,104 +1,235 @@
-/* NeoFlux Matched Theme for AI.Web Landing Page */
-
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #101320, #202636);
+  font-family: 'JetBrains Mono', 'Segoe UI', monospace, sans-serif;
+  background: linear-gradient(120deg, #0f101a, #212438 80%);
   color: #e0f7ff;
+  min-height: 100vh;
 }
 
-.logo {
-  max-width: 180px;
-  margin-top: 2rem;
+.aiweb-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle, #00ffff11 10%, transparent 70%), url('aiwebbgv2.png') center/cover no-repeat;
+  opacity: 0.65;
+  pointer-events: none;
+  animation: bgPulse 18s infinite alternate;
+}
+
+.aiweb-pulse-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle, #00ffff10 30%, transparent 90%);
+  pointer-events: none;
+  animation: pulse 6s infinite alternate;
+}
+
+@keyframes bgPulse {
+  from { opacity: 0.65; }
+  to   { opacity: 0.8; }
+}
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  100% { opacity: 0.5; }
 }
 
 header {
   text-align: center;
-  padding: 4rem 2rem;
-  background: radial-gradient(circle, #00ffff20 0%, transparent 80%);
+  padding: 4.5rem 2rem 2.5rem;
+  background: radial-gradient(circle, #00ffff10 0%, transparent 80%);
+  position: relative;
+  z-index: 10;
 }
+
+.logo { max-width: 180px; margin-bottom: 1rem; }
+.subhead { color: #b8ffe9; font-size: 1.2rem; margin-bottom: 1rem; }
+.main-nav { margin: 1.2rem 0 0.5rem 0; }
+.main-nav a {
+  color: #00ffff;
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.main-nav a:hover { color: #ffb84d; }
+
+.social-bar {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  z-index: 20;
+  display: flex;
+  gap: 1rem;
+}
+.social-bar a {
+  color: #00ffff;
+  font-size: 28px;
+  transition: color 0.2s;
+}
+.social-bar a:hover { color: #ffb84d; }
 
 h1 {
   font-size: 3rem;
   color: #7fffd4;
   text-shadow: 0 0 15px #00ffff;
+  margin-bottom: 0.3em;
 }
-
 h2 {
   color: #99eaff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
   text-shadow: 0 0 10px #99eaffaa;
 }
-
-p {
-  line-height: 1.6;
-  color: #c4f6ff;
-}
-
 .hero-button {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.5rem;
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
   background: linear-gradient(90deg, #00ffff, #a1c4fd);
   color: #000;
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 0 20px #00ffff88;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
-
 .hero-button:hover {
   background: #00ffff;
   color: #001;
-  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff88;
+  box-shadow: 0 0 40px #00ffff, 0 0 40px #00ffff99;
 }
 
 section {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  max-width: 850px;
+  margin: 3.8rem auto;
+  padding: 2rem;
+  background: rgba(10,18,24,0.92);
+  border-radius: 14px;
+  box-shadow: 0 0 30px #00ffff17;
+  position: relative;
+  z-index: 5;
 }
 
-.features {
+.aiweb-lab {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.waveform-container {
+  position: relative;
+  flex: 2;
+  min-width: 320px;
+  max-width: 400px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,255,255,0.06);
+  border-radius: 20px;
+  box-shadow: 0 0 25px #00ffff33;
+  overflow: hidden;
+}
+.waveform-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1.2px) brightness(1.08) contrast(1.2);
+  opacity: 0.84;
+}
+.christ-symbol-pulse {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8rem;
+  color: #fffa99;
+  text-shadow: 0 0 24px #fffacd, 0 0 18px #ffef63, 0 0 6px #00ffff;
+  animation: pulse 1.9s infinite alternate;
+  font-family: 'JetBrains Mono', monospace;
+  pointer-events: none;
 }
 
+.lab-description { flex: 3; min-width: 220px; }
+
+.features-grid, .support-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 1.4rem 0;
+}
 .feature-card {
-  background: rgba(0, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.15);
+  background: rgba(0,255,255,0.07);
+  border: 1.2px solid rgba(0,255,255,0.16);
   border-radius: 12px;
-  padding: 1rem;
-  flex: 1 1 250px;
-  box-shadow: 0 0 10px #00ffff22;
-  transition: all 0.3s ease;
+  padding: 1.3rem;
+  flex: 1 1 240px;
+  box-shadow: 0 0 10px #00ffff33;
+  font-size: 1.08rem;
+  transition: all 0.3s;
+  backdrop-filter: blur(0.5px);
+}
+.feature-card:hover {
+  background: rgba(0,255,255,0.17);
+  box-shadow: 0 0 24px #00ffff99;
 }
 
-.feature-card:hover {
-  background: rgba(0, 255, 255, 0.12);
-  box-shadow: 0 0 15px #00ffff55;
+.survey-section { background: rgba(0,255,255,0.02); }
+.survey-embed {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00ffff44;
+  margin: 2.5rem auto 0 auto;
+  max-width: 720px;
+}
+
+.progress-bar {
+  background: #21232e;
+  border-radius: 5px;
+  height: 20px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff 60%, #ffef63 100%);
+  width: 48%;
+  animation: pulse 2s infinite alternate;
+}
+
+.changelog { padding-left: 1rem; color: #b8ffe9; }
+.changelog li { margin-bottom: 0.4rem; }
+
+.founder-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem auto 1rem;
+}
+.founder-pic {
+  max-width: 110px;
+  border-radius: 12px;
+  border: 1px solid #00ffff44;
+  box-shadow: 0 0 8px #00ffff33;
 }
 
 footer {
   text-align: center;
   padding: 2rem;
   background: #0d111b;
-  font-size: 0.9rem;
+  font-size: 0.93rem;
   color: #88b3d5;
+  margin-top: 2rem;
+  border-radius: 14px 14px 0 0;
 }
 
-@media screen and (max-width: 768px) {
-  .feature-card {
-    flex: 1 1 100%;
-    margin-bottom: 1rem;
-  }
-  section {
-    padding: 1rem;
-  }
-  header img {
-    max-width: 120px;
-  }
+/* Responsive tweaks */
+@media screen and (max-width: 1000px) {
+  .aiweb-lab { flex-direction: column; }
+  .features-grid, .support-tiers { flex-direction: column; }
+  section { padding: 1.2rem; }
 }
